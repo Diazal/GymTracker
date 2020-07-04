@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmls:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gym Pro</title>
+
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	rel="stylesheet" media="screen">
+
+</head>
+<body>
+
+	<div class= "container">
+	
+		<div th:if="${not #lists.isEmpty(exercises)}">
+			<h2>Exercises</h2>
+			
+			<table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+
+            </tr>
+            <tr th:each="exercise : ${exercises}">
+                <td th:text="${exercise.id}"></td>
+                <td th:text="${exercise.description}"></td>
+<!--                 <td><a th:href="${'/product/delete/' + product.id}">Delete</a> </td> -->
+            </tr>
+        </table>
+		
+		</div>
+	
+	
+	</div>
+
+</body>
+</html>
